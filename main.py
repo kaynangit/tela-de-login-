@@ -32,7 +32,7 @@ caso o usuario já tenha sido logado '''
 
 @app.route('/')
 @login_required
-def poslogin():
+def home():
     return render_template('home.html')
 
 '''essa rota leva a tela de login para acessar o site e so pode ser acessada caso o usuario já tenha feito cadastro, 
@@ -50,7 +50,7 @@ def criar():
             return  'Nome ou senha incorretos'
         
         login_user(user)
-        return redirect(url_for('poslogin'))
+        return redirect(url_for('home'))
 
 '''cria uma rota para a pagina de login que tanto recebe os dados de novos usuario e registra no banco de dados quanto 
 redireciona usuarios já cadastrados'''

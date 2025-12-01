@@ -33,7 +33,7 @@ caso o usuario já tenha sido logado '''
 @app.route('/')
 @login_required
 def poslogin():
-    return render_template('poslogin.html')
+    return render_template('home.html')
 
 '''essa rota leva a tela de login para acessar o site e so pode ser acessada caso o usuario já tenha feito cadastro, 
 porem se o nome ou senha estiverem errados emite um aviso  '''
@@ -84,5 +84,3 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug = True)
-
-

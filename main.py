@@ -10,7 +10,7 @@ import hashlib
 app = Flask(__name__)
 app.secret_key = 'teste'
 lm = LoginManager(app)
-lm.login_view = 'front'
+lm.login_view = 'cadastrar'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
 db.init_app(app)
 
@@ -58,7 +58,7 @@ redireciona usuarios já cadastrados'''
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-       return render_template('front.html')
+       return render_template('cadastrar.html')
     elif request.method == 'POST':
         
         nome = request.form['nome']

@@ -37,10 +37,10 @@ def home():
 
 '''essa rota leva a tela de login para acessar o site e so pode ser acessada caso o usuario já tenha feito cadastro, 
 porem se o nome ou senha estiverem errados emite um aviso  '''
-@app.route('/criar', methods = ['GET', 'POST'])
-def criar():
+@app.route('/login', methods = ['GET', 'POST'])
+def login():
     if request.method == "GET":
-        return render_template('criar_conta.html')
+        return render_template('login.html')
     elif request.method == 'POST':
         nome = request.form['nome']
         senha = request.form['senha']
@@ -70,14 +70,14 @@ def cadastrar():
 
         login_user(novo_usuario)
 
-        return redirect(url_for('criar'))
+        return redirect(url_for('login'))
 
 '''Rota de logout para caso o usuario queira sair do site'''
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('criar'))
+    return redirect(url_for('login'))
     
 
 if __name__ == "__main__":

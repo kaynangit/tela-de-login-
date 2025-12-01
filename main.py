@@ -55,8 +55,8 @@ def criar():
 '''cria uma rota para a pagina de login que tanto recebe os dados de novos usuario e registra no banco de dados quanto 
 redireciona usuarios já cadastrados'''
 
-@app.route('/login', methods = ['GET', 'POST'])
-def login():
+@app.route('/cadastrar', methods = ['GET', 'POST'])
+def cadastrar():
     if request.method == 'GET':
        return render_template('cadastrar.html')
     elif request.method == 'POST':
